@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Image Recognition</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/recognition.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+    <!-- MobileNet -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">🤖</div>
+
+            <div>
+                <h2>AI Image</h2>
+                <span>Recognition</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="index.html">🏠 Dashboard</a>
+            <a href="recognition.html" class="active">🖼️ Recognition</a>
+            <a href="camera.html">📷 Camera</a>
+            <a href="history.html">🕒 History</a>
+            <a href="about.html">ℹ️ About</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            AI Recognition System<br>
+            © 2026
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <header class="page-header">
+
+            <div>
+                <h1>Image Recognition</h1>
+
+                <p>
+                    Upload an image and let AI identify the object.
+                </p>
+            </div>
+
+            <div id="modelStatus" class="loading-status">
+                Loading AI Model...
+            </div>
+
+        </header>
+
+
+        <!-- UPLOAD BOX -->
+        <section class="recognition-container">
+
+            <div class="upload-card">
+
+                <div class="upload-icon">
+                    ☁️
+                </div>
+
+                <h2>Upload Image</h2>
+
+                <p>
+                    Select JPG, PNG or WEBP image
+                </p>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                    hidden
+                >
+
+                <button
+                    class="btn primary"
+                    id="selectImageBtn">
+                    Choose Image
+                </button>
+
+            </div>
+
+
+            <!-- IMAGE PREVIEW -->
+            <div class="preview-card">
+
+                <h2>Image Preview</h2>
+
+                <div class="preview-area">
+
+                    <div id="emptyPreview">
+                        <span>🖼️</span>
+                        <p>No image selected</p>
+                    </div>
+
+                    <img
+                        id="previewImage"
+                        alt="Selected image"
+                    >
+
+                </div>
+
+                <button
+                    id="recognizeBtn"
+                    class="btn recognize-btn"
+                    disabled>
+
+                    🤖 Recognize Image
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOADING -->
+        <div
+            id="predictionLoading"
+            class="prediction-loading">
+
+            <div class="loader"></div>
+
+            <p>AI is analyzing your image...</p>
+
+        </div>
+
+
+        <!-- RESULTS -->
+        <section
+            id="resultsSection"
+            class="results-section">
+
+            <div class="results-header">
+
+                <h2>Recognition Results</h2>
+
+                <button
+                    id="clearResult"
+                    class="clear-btn">
+
+                    Clear
+
+                </button>
+
+            </div>
+
+
+            <div class="main-result">
+
+                <div class="prediction-main">
+
+                    <div class="result-label">
+                        Top Prediction
+                    </div>
+
+                    <h1 id="topPrediction">
+                        --
+                    </h1>
+
+                    <div class="confidence">
+                        <div class="confidence-bar">
+                            <div
+                                id="confidenceFill"
+                                class="confidence-fill">
+                            </div>
+                        </div>
+
+                        <strong id="confidenceText">
+                            0%
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="prediction-list">
+
+                    <h3>Top Predictions</h3>
+
+                    <div id="predictionList">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/recognition.js"></script>
+
+</body>
+</html>
