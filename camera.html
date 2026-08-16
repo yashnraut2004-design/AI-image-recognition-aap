@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Camera Recognition</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/recognition.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">🤖</div>
+
+            <div>
+                <h2>AI Image</h2>
+                <span>Recognition</span>
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="recognition.html">
+                🖼️ Recognition
+            </a>
+
+            <a href="camera.html" class="active">
+                📷 Camera
+            </a>
+
+            <a href="history.html">
+                🕒 History
+            </a>
+
+            <a href="about.html">
+                ℹ️ About
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            AI Recognition System<br>
+            © 2026
+        </div>
+
+    </aside>
+
+
+    <main class="main">
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>Live Camera Recognition</h1>
+
+                <p>
+                    Use your webcam to capture an object.
+                </p>
+
+            </div>
+
+            <div
+                id="cameraModelStatus"
+                class="loading-status">
+
+                Loading AI Model...
+
+            </div>
+
+        </header>
+
+
+        <section class="camera-container">
+
+            <div class="camera-card">
+
+                <video
+                    id="cameraVideo"
+                    autoplay
+                    playsinline>
+                </video>
+
+                <div
+                    id="cameraPlaceholder"
+                    class="camera-placeholder">
+
+                    📷
+
+                    <p>
+                        Camera is not started
+                    </p>
+
+                </div>
+
+                <canvas
+                    id="cameraCanvas"
+                    hidden>
+                </canvas>
+
+            </div>
+
+
+            <div class="camera-controls">
+
+                <button
+                    id="startCamera"
+                    class="btn primary">
+
+                    📷 Start Camera
+
+                </button>
+
+                <button
+                    id="captureBtn"
+                    class="btn recognize-btn"
+                    disabled>
+
+                    🔍 Recognize
+
+                </button>
+
+                <button
+                    id="stopCamera"
+                    class="btn danger"
+                    disabled>
+
+                    ⛔ Stop Camera
+
+                </button>
+
+            </div>
+
+
+            <div
+                id="cameraResult"
+                class="camera-result">
+
+                <h2>Recognition Result</h2>
+
+                <div id="cameraPrediction">
+                    No prediction yet.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/camera.js"></script>
+
+</body>
+
+</html>
