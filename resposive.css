@@ -1,0 +1,153 @@
+/* ================= TABLET ================= */
+
+@media (max-width: 1000px) {
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recognition-container {
+        grid-template-columns: 1fr;
+    }
+
+    .main-result {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow {
+        flex-wrap: wrap;
+
+        gap: 25px;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+        padding: 15px;
+    }
+
+    .logo {
+        justify-content: center;
+
+        margin-bottom: 15px;
+    }
+
+    nav {
+        flex-direction: row;
+
+        overflow-x: auto;
+
+        justify-content: center;
+    }
+
+    nav a {
+        white-space: nowrap;
+
+        font-size: 13px;
+
+        padding: 10px;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .main {
+        margin-left: 0;
+
+        padding: 20px;
+    }
+
+    .topbar,
+    .page-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .topbar h1,
+    .page-header h1 {
+        font-size: 27px;
+    }
+
+    .hero {
+        padding: 30px;
+
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .hero-icon {
+        display: none;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow {
+        flex-direction: column;
+    }
+
+    .workflow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .upload-card,
+    .preview-card {
+        padding: 20px;
+    }
+
+    .camera-card {
+        min-height: 300px;
+    }
+
+    #cameraVideo {
+        height: 300px;
+    }
+
+    .camera-placeholder {
+        min-height: 300px;
+    }
+
+    .camera-controls {
+        flex-direction: column;
+    }
+
+    .camera-controls .btn {
+        width: 100%;
+    }
+
+    .history-item {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .about-card {
+        padding: 25px;
+    }
+
+}
