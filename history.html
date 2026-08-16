@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Recognition History</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/recognition.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🤖
+            </div>
+
+            <div>
+                <h2>AI Image</h2>
+                <span>Recognition</span>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="recognition.html">
+                🖼️ Recognition
+            </a>
+
+            <a href="camera.html">
+                📷 Camera
+            </a>
+
+            <a href="history.html" class="active">
+                🕒 History
+            </a>
+
+            <a href="about.html">
+                ℹ️ About
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            AI Recognition System<br>
+            © 2026
+
+        </div>
+
+    </aside>
+
+
+    <main class="main">
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>Recognition History</h1>
+
+                <p>
+                    View your previous AI recognition results.
+                </p>
+
+            </div>
+
+            <button
+                id="clearHistory"
+                class="btn danger">
+
+                🗑️ Clear History
+
+            </button>
+
+        </header>
+
+
+        <section class="history-container">
+
+            <div
+                id="historyList"
+                class="history-list">
+
+            </div>
+
+            <div
+                id="noHistory"
+                class="no-history">
+
+                <div>🕒</div>
+
+                <h2>No Recognition History</h2>
+
+                <p>
+                    Your recognition results will appear here.
+                </p>
+
+                <a
+                    href="recognition.html"
+                    class="btn primary">
+
+                    Start Recognition
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/history.js"></script>
+
+</body>
+
+</html>
